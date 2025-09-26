@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Mission Statement Activity for WDD 131">
+  <meta name="author" content="Karis Barfield">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Statement</title>
+<!--Remember, no more than a hundred charaters per line.-->
+
+
+  <!-- Link to our stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ======================== -->
+  <!-- THEME SELECTOR DROPDOWN  -->
+  <!-- ======================== -->
+  <!-- Users can pick light or dark mode here -->
+  <label for="theme">Theme:</label>
+  <select id="theme">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Brigham Young University–Idaho</h1>
+    <h2>Official Mission Statement</h2>
+  </header>
+
+  <!-- Main Mission Statement -->
+  <main>
+    <section class="mission-box">
+      <p>
+        Brigham Young University–Idaho was founded and is supported and guided by
+        The Church of Jesus Christ of Latter-day Saints. Its mission is to develop
+        disciples of Jesus Christ who are leaders in their homes, the Church, and their
+        communities.
+      </p>
+
+      <p>
+        The university does this by:<br>
+        1. Building testimonies of the restored gospel of Jesus Christ and fostering its
+           principles in a wholesome academic, cultural, and social environment. <br><br>
+        2. Providing a high-quality education that prepares students of diverse interests
+           and abilities for lifelong learning and employment.<br><br>
+        3. Serving as many students as possible within resource constraints.<br><br>
+        4. Delivering education that is affordable for students and the Church.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer with BYUI logo -->
+  <footer>
+    <!-- Give the logo an id so JS/CSS can find it -->
+    <img id="logo" src="mission.png" alt="BYU-Idaho Logo">
+  </footer>
+
+  <!-- Link to that JavaScript file -->
+  <!-- 'defer' makes sure JS loads after HTML is ready -->
+  <script src="mission.js" defer></script>
+</body>
+</html>  
+<!-- check the names of the png images...-->
