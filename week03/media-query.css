@@ -1,0 +1,48 @@
+
+/* Remember the 100 charater rule....*/
+/* Apply the Roboto font to the whole page.  Will Roboto get along with Linux? */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0; /* light gray background for contrast */
+  margin: 0; /* remove default body margin */
+  padding: 0; /* remove default body padding */
+}
+
+/* Style header, main, and footer the same way */
+header,
+main,
+footer {
+  max-width: 640px; /* keeps content from stretching too wide */
+  margin: 1rem auto; /* centers horizontally, adds vertical spacing */
+  padding: 1rem; /* space inside the box */
+  border: 1px solid #ccc; /* faint gray border */
+  background-color: #dceeff; /* light blue background */
+}
+
+/* By default, the main area has a single column grid */
+main {
+  display: grid; /* enables grid layout */
+  grid-template-columns: 1fr; /* one flexible column */
+  gap: 1rem; /* spacing between grid items */
+}
+
+/* Each scripture section gets a white background card look */
+section {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px; /* slightly rounded corners */
+}
+
+/* MEDIA QUERY: only applies when the screen is >= 500px wide */
+@media screen and (min-width: 500px) {
+  /* Make the header darker for larger screens */
+  header {
+    background-color: black;
+    color: white; /* ensures text is readable on black */
+  }
+
+  /* Main switches to two equal columns */
+  main {
+    grid-template-columns: 1fr 1fr; /* two equal-width columns */
+  }
+}

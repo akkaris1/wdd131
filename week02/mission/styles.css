@@ -1,0 +1,90 @@
+
+
+/* ========================= */
+/* GLOBAL STYLES (Light mode default) */
+/* ========================= */
+
+body {
+  font-family: "Times New Roman", Times, serif;  /* Default font */
+  font-size: 20px;                               /* Base font size */
+  line-height: 1.5;                              /* Spacing between lines */
+  margin: 20px;                                  /* Space between border and browser edge */
+  padding: 0;                                    /* Remove default padding */
+  background-color: #fff;                        /* White background */
+  color: #000;                                   /* Black text */
+  text-align: center;                            /* Center headings */
+  border: 1px solid #ccc;                        /* Light border */
+  box-sizing: border-box;                        /* Keeps layout neat */
+}
+
+/* Header section */
+header {
+  padding: 20px 0;
+}
+
+/* Main title */
+h1 {
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+/* Subtitle (blue in light mode) */
+h2 {
+  color: #006EB6; /* BYUI blue */
+  font-size: 1.5em;
+  margin-top: 0;
+  letter-spacing: 0.75px;
+}
+
+/* Mission box centered on page */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Text container */
+.mission-box {
+  text-align: left;
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Footer and logo */
+footer {
+  padding: 20px;
+}
+
+footer img {
+  width: 150px;
+  height: auto;
+}
+
+/* ========================= */
+/* DARK THEME OVERRIDES */
+/* ========================= */
+body.dark {
+  background-color: #333; /* Dark gray background */
+  color: #fff;            /* White text */
+  border: 1px solid #666; /* Darker border */
+}
+
+/* Subtitle contrast fix in dark mode */
+body.dark h2 {
+  color: #4da8da; /* Lighter blue */
+}
+
+/* think there is an easier way to do this...
+
+/* Mission box looks better with contrast */
+body.dark .mission-box {
+  background-color: #444;
+  border-radius: 8px;
+}
+
+/* Footer darker in dark mode */
+body.dark footer {
+  background-color: #222;
+}

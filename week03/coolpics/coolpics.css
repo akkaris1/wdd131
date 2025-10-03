@@ -1,0 +1,116 @@
+
+
+/* ---------------------------
+   Import Google Font
+---------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* ---------------------------
+   CSS VARIABLES
+   (easy to reuse colors/fonts)
+---------------------------- */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+}
+
+/* ---------------------------
+   GLOBAL STYLES
+---------------------------- */
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;   /* Slightly bigger for readability */
+  margin: 0;          /* Remove browser default margin */
+  background-color: white;
+  color: var(--text-dark);
+}
+
+/* ---------------------------
+   HEADER + FOOTER
+---------------------------- */
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1em;
+}
+
+/* Titles use the secondary font */
+h1, h2 {
+  font-family: var(--secondary-font);
+}
+
+/* Links */
+a:link, a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Maybe stand out a bit */
+ main h2 {
+  text-align: center;   /* centers the heading text */
+  margin-top: 1em;      /* space above the heading */
+  margin-bottom: 1em;   /* space below the heading */
+}
+
+
+
+/* ---------------------------
+   GALLERY IMAGE STYLING
+---------------------------- */
+img {
+  max-width: 100%;     /* Keeps images from overflowing */
+  height: 250px;       /* Force square shape */
+  width: 250px;
+  object-fit: cover;   /* Crop instead of distort */
+  border-radius: 5px;  /* Slightly rounded corners */
+}
+
+/* ---------------------------
+   GALLERY LAYOUT - MOBILE FIRST
+   (Start with one column layout)
+---------------------------- */
+.gallery {
+  display: grid;               /* Use CSS Grid */
+  grid-template-columns: 1fr;  /* 1 column by default (small screens) */
+  gap: 10px;                   /* Space between images */
+  justify-items: center;       /* Center images in their grid cells */
+  padding: 1em;
+}
+
+/* ---------------------------
+   RESPONSIVE BREAKPOINTS
+---------------------------- */
+
+/* Medium screen (≥700px) → 2 columns */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);  /* 2 equal columns */
+  }
+}
+
+/* Large screen (≥1000px) → 3 columns and horizontal nav */
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  }
+
+  /* Hide menu button on wide screens */
+  #menu {
+    display: none;
+  }
+
+  /* Make navigation horizontal */
+  nav ul {
+    display: flex;              /* Flexbox for horizontal layout */
+    justify-content: center;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+  }
+}
