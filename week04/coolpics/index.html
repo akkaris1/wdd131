@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Character encoding -->
+  <meta charset="UTF-8">
+
+  <!-- Title shown in browser tab -->
+  <title>Cool Pics 📷</title>
+
+  <!-- Makes page responsive: tells the browser to scale properly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Short description (search engines, accessibility) -->
+  <meta name="description" content="A simple photography gallery showcasing cool images.">
+
+  <!-- Who is the author of the site -->
+  <meta name="author" content="Karis Barfield">
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="coolpics.css">
+
+  <!-- Link to JavaScript file, defer makes it load after HTML is parsed -->
+  <script src="coolpics.js" defer></script>
+</head>
+
+<body>
+  <!-- HEADER section -->
+  <header>
+    <!-- Main title of site -->
+    <h1>Cool Pics 📷</h1>
+
+    <!-- Menu button (visible on small screens, hidden on large) -->
+    <button id="menu">Menu</button>
+
+    <!-- Navigation menu -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN section -->
+  <main>
+    <!-- Headline -->
+    <h2> Explore the Gallery</h2>
+
+    <!-- Gallery container with class "gallery" -->
+    <section class="gallery">
+      <!-- Each image goes inside a <figure> -->
+      <!-- Reusing the same sample image for now, how boring! -->
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+      <figure><img src="norris-sm.jpeg" alt="picture"></figure>
+    </section>
+  </main>
+
+  <!-- FOOTER section -->
+  <footer>
+    <p>©2025 Not a real site 😀</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+
+
+/* ---------------------------
+   Import Google Font
+---------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* ---------------------------
+   CSS VARIABLES
+   (easy to reuse colors/fonts)
+---------------------------- */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+}
+
+/* ---------------------------
+   GLOBAL STYLES
+---------------------------- */
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;   /* Slightly bigger for readability */
+  margin: 0;          /* Remove default browser margin */
+  background-color: white;
+  color: var(--text-dark);
+}
+
+/* ---------------------------
+   HEADER + FOOTER
+---------------------------- */
+header,
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1em;
+}
+
+/* Titles use the secondary font */
+h1, h2 {
+  font-family: var(--secondary-font);
+}
+
+/* Links */
+a:link,
+a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Centered section heading inside <main> */
+main h2 {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* ---------------------------
+   GALLERY IMAGE STYLING
+---------------------------- */
+img {
+  max-width: 100%;     /* Prevent image overflow */
+  height: 250px;       /* Uniform image shape */
+  width: 250px;
+  object-fit: cover;   /* Crop instead of stretch */
+  border-radius: 5px;  /* Slightly rounded corners */
+}
+
+/* ---------------------------
+   GALLERY LAYOUT - MOBILE FIRST
+   (Start with one column layout)
+---------------------------- */
+.gallery {
+  display: grid;               /* Use CSS Grid */
+  grid-template-columns: 1fr;  /* 1 column by default (small screens) */
+  gap: 10px;                   /* Space between images */
+  justify-items: center;       /* Center images in grid */
+  padding: 1em;
+}
+
+/* ---------------------------
+   MENU STYLES (for mobile)
+---------------------------- */
+
+/* Hide nav by default on small screens */
+nav {
+  display: none;
+}
+
+/* Show nav when the "open" class is toggled */
+nav.open {
+  display: block;
+}
+
+/* Menu button styling */
+#menu {
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+/* ---------------------------
+   RESPONSIVE BREAKPOINTS
+---------------------------- */
+
+/* Medium screen (≥700px) → 2 columns */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screen (≥1000px) → 3 columns and horizontal nav */
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Hide menu button on wide screens */
+  #menu {
+    display: none;
+  }
+
+  /* Make navigation horizontal */
+  nav {
+    display: block; /* Always show nav on large screens */
+  }
+
+  nav ul {
+    display: flex;              /* Flexbox for horizontal layout */
+    justify-content: center;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+/* ---------------------------
+   IMAGE VIEWER (MODAL)
+---------------------------- */
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* transparent overlay */
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Make sure it stays on top */
+}
+
+/* Image inside modal */
+dialog img {
+  max-width: 90%;
+  max-height: 80%;
+  margin: 20vh auto; /* 20% viewport height down from top */
+  display: block;
+  border-radius: 10px;
+}
+
+/* Close ("X") button */
+.close-viewer {
+  position: absolute;
+  top: 20vh; /* Align with image top margin */
+  right: 10vw;
+  font-size: 1.5em;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+}
