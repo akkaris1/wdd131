@@ -1,0 +1,114 @@
+/* Reset basic spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+/* Header section */
+header {
+  text-align: center;
+  padding: 1em;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 1.5em;
+}
+
+header h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.controls input {
+  padding: 0.4em;
+  width: 40%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.controls button {
+  padding: 0.4em 0.8em;
+  border: 1px solid #888;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Book section */
+.book-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.book-image {
+  width: 200px;
+  height: 280px;
+  border: 2px dashed #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefefe;
+}
+
+.book-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.book-info h2 {
+  margin-bottom: 0.5em;
+}
+
+.extra-info {
+  font-style: italic;
+  color: #555;
+}
+
+/* Filter section */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  border-top: 2px solid #ddd;
+  padding-top: 1em;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.filters select {
+  margin-top: 0.3em;
+  padding: 0.3em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.8em;
+  color: #666;
+}
