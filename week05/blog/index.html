@@ -1,0 +1,100 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple book review blog featuring favorite reads." />
+    <meta name="author" content="Karis Barfield" />
+    <title>Book Review Blog</title>
+    <!--Someday find out why we need all this meta stuff... -->
+
+    <!-- Link to the CSS -->
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Headline font from Google Fonts (Lora) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- watch it, 99 charaters long... -->
+
+    <!-- Link to JavaScript (used in part two?) -->
+    <script src="blog.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to The main content link -->
+    <div class="skiptocontent">
+      <a href="#maincontent">Skip to main content</a>
+    </div>
+
+    <!-- HEADER SECTION -->
+    <header>
+      <h1>Book Review Blog</h1>
+
+      <!-- Navigation menu -->
+      <nav>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Archive</a></li>
+          <li><a href="#">Search</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main id="maincontent">
+      
+      <!-- Placeholder for filter form -->
+      <section class="filters">
+        <p><em>Filter form will go here</em></p>
+      </section>
+
+      <!-- ARTICLES SECTION -->
+      <section class="articles">
+
+        <!-- First book article -->
+        <article>
+          <div class="book-details">
+            <p><strong>Date:</strong> August 1, 2025</p>
+            <p><strong>Author:</strong> Jane Doe</p>
+            <p><strong>Rating:</strong> ★★★★☆</p>
+          </div>
+
+          <div class="book-content">
+            <h2>The Hidden Garden</h2>    <!--Placeholder for image -->
+            <img src="images/hidden-garden.jpg" alt="Book cover of The Hidden Garden" />  
+            <p>
+              A beautifully written story about rediscovering life’s simple joys. The author’s 
+              attention to detail makes the setting feel alive, and the characters are rich and believable.
+            </p>
+          </div>
+        </article>
+
+        <!-- Second book article -->
+        <article>
+          <div class="book-details">
+            <p><strong>Date:</strong> September 10, 2025</p>
+            <p><strong>Author:</strong> John Smith</p>
+            <p><strong>Rating:</strong> ★★★★★</p>
+          </div>
+
+          <div class="book-content">
+            <h2>Whispers of the Sea</h2>
+            <img src="images/whispers-sea.jpg" alt="Book cover of Whispers of the Sea" />  
+            <!--Placeholder for image -->
+
+            <p>
+              A captivating novel that blends mystery and self-discovery. The ocean serves as both a 
+              setting and a metaphor, pulling readers into its depths page after page.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- FOOTER (optional for now) 
+    <footer>
+      <p>&copy; 2025 Karis's Book Review Blog. All rights reserved.</p>
+    </footer>  -->
+  </body>
+</html>
