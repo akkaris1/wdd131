@@ -1,0 +1,57 @@
+
+<!-- form-demo.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="form-demo.css" />
+    <script src="form-demo.js" defer></script>
+  </head>
+  <body>
+    <header><h1>Checkout</h1></header>
+
+    <main>
+      <!-- Where we display error messages -->
+      <section class="errors"></section>
+
+      <!-- The form the user fills out -->
+      <form id="checkoutForm" action="completed.html">
+        
+        <label for="customerName">Full Name</label>
+        <input type="text" id="customerName" name="customerName" required />
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="">-- Select payment method --</option>
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <!-- CREDIT CARD SECTION (start hidden) -->
+        <div id="creditCardContainer" class="hide">
+          <label for="creditCard">Credit Card Number</label>
+          <!-- pattern ensures 16 numbers exactly -->
+          <input
+            type="text"
+            id="creditCard"
+            name="creditCard"
+            pattern="[0-9]{16}"
+          />
+        </div>
+
+        <!-- PAYPAL SECTION (start hidden) -->
+        <div id="paypalContainer" class="hide">
+          <label for="paypalUsername">PayPal Username</label>
+          <input type="text" id="paypalUsername" name="paypalUsername" />
+        </div>
+
+        <button type="submit">Complete Purchase</button>
+      </form>
+    </main>
+  </body>
+</html>

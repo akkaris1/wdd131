@@ -1,0 +1,115 @@
+
+/* ===== Page Layout ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+}
+
+/* ===== Form Layout ===== */
+.card-form {
+  display: grid;
+  gap: 3rem;            /* spacing between card and button */
+  justify-items: center;
+}
+
+/* ===== Card Container (outer frame) ===== */
+.card-display {
+  width: 350px;
+  height: 240px;        /* card height stays fixed */
+  position: relative;
+  perspective: 1000px;  /* enables 3D flip */
+}
+
+/* ===== Flip Wrapper (the rotating layer) ===== */
+.card-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+/* ===== Card Faces ===== */
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  background: white;
+  display: grid;
+  gap: 0.4rem;
+  backface-visibility: hidden;   /* ensures the hidden side is actually hidden */
+}
+
+/* Back starts rotated */
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* ===== Card Interior Elements ===== */
+.card-image {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.mag-strip {
+  background: #333;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+label {
+  font-size: 0.85rem;
+}
+
+input {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== Button ===== */
+button {
+  padding: 0.6rem 1.4rem;
+  background: #5c45ff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background: #4836cc;
+}
+
+/* ===== Card Flip Logic ===== */
+
+/* Flip to back when CVV field is focused */
+.card-display:has(#cvv-input:focus) .card-flip {
+  transform: rotateY(180deg);
+}
+
+/* Flip back to front when any front field is focused */
+.card-display:has(#card-number-input:focus) .card-flip,
+.card-display:has(#card-name-input:focus) .card-flip,
+.card-display:has(#exp-date-input:focus) .card-flip {
+  transform: rotateY(0deg);
+}
