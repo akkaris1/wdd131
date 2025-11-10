@@ -1,0 +1,149 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+
+:root {
+  --accent-font: "Kalam", sans-serif;
+}
+
+
+/* ===== Global Styles ===== */
+:root {
+  --primary-color: #1B98E0;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #f5f5f5;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --accent-font: "Amatic SC", cursive; /* We will replace this later for accessibility */
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  background-color: var(--text-light);
+  color: var(--text-dark);
+}
+
+/* Make images never overflow their container */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branding img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.3rem;
+}
+
+.branding h1 {
+  margin: 0;
+  font-family: var(--accent-font);
+  font-size: 2.6rem;
+}
+
+/* ===== Search Form ===== */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.search-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Recipe List (Mobile First) ===== */
+.recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.recipe-card h2 {
+  margin: 0.5rem 0;
+}
+
+/* Star Rating */
+.rating {
+  font-size: 1.2rem;
+  color: goldenrod;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.social img {
+  width: 32px;
+  margin: 0 0.2rem;
+}
+
+.attribution {
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+/* ===== Responsive Layout ===== */
+@media (min-width: 600px) {
+  .recipes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .recipe-card {
+    width: 45%;
+  }
+}
+@media (min-width: 960px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .recipe-card {
+    width: 30%;
+  }
+}
+
+
