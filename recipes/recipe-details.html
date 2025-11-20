@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recipe Details</title>
+
+  <link rel="stylesheet" href="recipes.css">
+</head>
+
+<body>
+
+  <!-- Main container where JS will insert the recipe -->
+  <main id="recipeDetails" class="recipe-details"></main>
+
+  <script type="module">
+    import recipes from "./recipes.mjs";
+
+    // Read the recipe number from the URL:
+    // Example: recipe-details.html?recipe=3
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get("recipe");
+
+    const recipe = recipes[index];
+
+    // Build the page content
+    document.getElementById("recipeDetails").innerHTML = `
+      <article class="detail-card">
+
+        <h1>${recipe.name}</h1>
+
+        <img src="images/${recipe.image}" alt="${recipe.name}">
+
+        <h2>Description</h2>
+        <p>${recipe.description}</p>
+
+        <h2>Ingredients</h2>
+        <ul>
+          ${recipe.recipeIngredient.map(i => `<li>${i}</li>`).join("")}
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+          ${recipe.recipeInstructions.map(i => `<li>${i}</li>`).join("")}
+        </ol>
+
+        <p><strong>Prep Time:</strong> ${recipe.prepTime}</p>
+        <p><strong>Cook Time:</strong> ${recipe.cookTime}</p>
+        <p><strong>Yield:</strong> ${recipe.recipeYield}</p>
+
+        <!-- Built-in back button -->
+        <button onclick="history.back()" class="back-btn">⬅ Back</button>
+
+      </article>
+    `;
+  </script>
+
+</body>
+
+</html>
