@@ -26,11 +26,7 @@ function getRandomListEntry(list) {
 // 3. Template: Build Tags HTML
 // ===============================
 function tagsTemplate(tags) {
-  let html = "";
-  tags.forEach(tag => {
-    html += `<li>${tag}</li>`;
-  });
-  return html;
+  return tags.map(tag => `<li>${tag}</li>`).join("");
 }
 
 
@@ -62,13 +58,20 @@ function ratingTemplate(rating) {
 
 // ===============================
 // 5. Template: Build Full Recipe Card
-//    *** UPDATED to include View Recipe button ***
+//    Includes View Recipe button that links
+//    to recipe-details.html?recipe=<index>
 // ===============================
-function recipeTemplate(recipe, index) {
+function recipeTemplate(recipe) {
+  // Find the index of this recipe in the ORIGINAL recipes array.
+  // This gives us a stable id even when the list is filtered.
+  let originalIndex = recipes.indexOf(recipe);
+
+  // Fallback to 0 if something weird happens
+  if (originalIndex === -1) originalIndex = 0;
+
   return `
     <article class="recipe-card">
 
-      <!-- Recipe Image -->
       <img 
         src="images/${recipe.image}" 
         alt="${recipe.name}" 
@@ -77,24 +80,19 @@ function recipeTemplate(recipe, index) {
         loading="lazy"
       >
 
-      <!-- Recipe Tags -->
       <ul class="recipe__tags">
         ${tagsTemplate(recipe.tags)}
       </ul>
 
-      <!-- Name -->
       <h2>${recipe.name}</h2>
 
-      <!-- Star Rating -->
       ${ratingTemplate(recipe.rating)}
 
-      <!-- Short Description -->
       <p class="recipe__description">
         ${recipe.description}
       </p>
 
-      <!-- NEW BUTTON: takes user to the full recipe -->
-      <button class="view-btn" data-index="${index}">
+      <button class="view-btn" data-index="${originalIndex}">
         View Recipe
       </button>
 
@@ -105,13 +103,12 @@ function recipeTemplate(recipe, index) {
 
 // ===============================
 // 6. Render a List of Recipes
-//    *** UPDATED to pass index to template ***
 // ===============================
 function renderRecipes(recipeList) {
   const recipeListElement = document.getElementById("recipeList");
 
   recipeListElement.innerHTML = recipeList
-    .map((recipe, index) => recipeTemplate(recipe, index))
+    .map(recipe => recipeTemplate(recipe))
     .join("");
 }
 
@@ -158,33 +155,30 @@ document.getElementById("searchForm").addEventListener("submit", (event) => {
 
 
 // ===============================
-// 9. NEW: View Recipe Button Handler
-//    Detect WHEN a button is clicked,
-//    Read the recipe index,
-//    Jump to the detail page.
+// 9. View Recipe Button Handler
+//    Click on a button in #recipeList,
+//    read its data-index,
+//    go to recipe-details.html?recipe=<index>
 // ===============================
-document.getElementById("recipeList").addEventListener("click", (e) => {
-  if (e.target.classList.contains("view-btn")) {
-    const index = e.target.dataset.index;
+document.getElementById("recipeList").addEventListener("click", (event) => {
+  const button = event.target.closest(".view-btn");
+  if (!button) return;
 
-    // Send user to the details page with ?recipe=# in the URL
-    window.location.href = `recipe-details.html?recipe=${index}`;
-  }
+  const index = button.dataset.index;
+  if (index === undefined) return;
+
+  // Build the URL with ?recipe=<index>
+  window.location.href = `recipe-details.html?recipe=${index}`;
 });
 
 
 // ===============================
 // 10. INIT — Run on Page Load
 // ===============================
-// Option A (assigned version): show a random recipe
+// Show one random recipe on load (as in the assignment)
 function init() {
   const recipe = getRandomListEntry(recipes);
-  renderRecipes([recipe]);
+  renderRecipes([recipe]); // Pass as array
 }
-
-// Option B (real-world version): show ALL recipes
-// function init() {
-//   renderRecipes(recipes);
-// }
 
 init();

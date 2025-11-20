@@ -23,11 +23,17 @@
     // Read the recipe number from the URL:
     // Example: recipe-details.html?recipe=3
     const params = new URLSearchParams(window.location.search);
-    const index = params.get("recipe");
+    const indexParam = params.get("recipe");
 
-    const recipe = recipes[index];
+    // Convert to a number
+    const index = Number(indexParam);
 
-    // Build the page content
+    // Basic safety check: fallback to first recipe if invalid index
+    let recipe = recipes[index];
+    if (!Number.isInteger(index) || index < 0 || index >= recipes.length || !recipe) {
+      recipe = recipes[0];
+    }
+
     document.getElementById("recipeDetails").innerHTML = `
       <article class="detail-card">
 
@@ -52,7 +58,6 @@
         <p><strong>Cook Time:</strong> ${recipe.cookTime}</p>
         <p><strong>Yield:</strong> ${recipe.recipeYield}</p>
 
-        <!-- Built-in back button -->
         <button onclick="history.back()" class="back-btn">⬅ Back</button>
 
       </article>
