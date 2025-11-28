@@ -1,0 +1,285 @@
+
+
+/* ----------------------------------------------------------
+   QUIET SKIES — Aurora Night Theme
+   styles.css
+---------------------------------------------------------- */
+
+
+/* ------------------------------
+   CSS RESET / BASE SETUP
+------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d1117; /* deep starry-sky color */
+    color: #e6e6e6;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 3rem;
+}
+
+
+/* ------------------------------
+   GLOBAL WRAPPERS
+------------------------------- */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+
+/* ------------------------------
+   HEADER + NAV
+------------------------------- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #0f141b;
+    border-bottom: 1px solid #1d2228;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    color: #8fbf6f; /* soft aurora green */
+}
+
+nav ul {
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: #3dd5e5; /* aurora blue-green */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background-color: #1d2228;
+    color: #8fbf6f;
+}
+
+
+/* ------------------------------
+   HEADINGS
+------------------------------- */
+h2 {
+    margin: 2rem 0 1rem;
+    font-size: 2rem;
+    color: #3dd5e5;
+}
+
+h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #8fbf6f;
+}
+
+
+/* ------------------------------
+   HERO IMAGE SECTION
+------------------------------- */
+.hero {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 0.5rem;
+    opacity: 0.85;
+}
+
+.hero .overlay-text {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e6e6e6;
+    text-shadow: 0 0 10px black;
+}
+
+
+/* ------------------------------
+   TEXT SECTIONS
+------------------------------- */
+section {
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+
+/* ------------------------------
+   IMAGE + TEXT ROW
+------------------------------- */
+.image-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.image-row img {
+    width: 200px;
+    border-radius: 0.4rem;
+}
+
+
+/* ------------------------------
+   GALLERY GRID
+------------------------------- */
+.gallery {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 0.4rem;
+}
+
+
+/* ------------------------------
+   JS WIDGET BOXES
+------------------------------- */
+#sky-message-box,
+#wildlife-box,
+#solarIndicator,
+#reflectionBox {
+    background-color: #1d2228;
+    border: 1px solid #3dd5e5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+#sky-message-box p,
+#wildlife-box p,
+#solarIndicator p,
+#reflectionBox p {
+    font-size: 1.1rem;
+}
+
+button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3dd5e5;
+    color: #0d1117;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #8fbf6f;
+}
+
+
+/* ------------------------------
+   EQUIPMENT GRID
+------------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.grid .card {
+    background-color: #1d2228;
+    border: 1px solid #3dd5e5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ------------------------------
+   STORIES PAGE CARDS
+------------------------------- */
+.story-card {
+    background-color: #1d2228;
+    border-left: 4px solid #3dd5e5;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #8fbf6f;
+    padding: 1rem 0;
+    border-top: 1px solid #1d2228;
+}
+
+footer .social {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+footer .social a {
+    color: #3dd5e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer .social a:hover {
+    color: #8fbf6f;
+}
+
+
+
+/* ------------------------------
+   RESPONSIVE ADJUSTMENTS
+------------------------------- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero .overlay-text {
+        font-size: 1.4rem;
+    }
+}
