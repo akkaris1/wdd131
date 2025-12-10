@@ -6,7 +6,7 @@ export const equipmentList = [
     {
         name: "Celestron C8",
         type: "telescope",
-        image: "images/scopes/c8.jpg",
+        image: "images/C8_1.jpg",
         description: "A classic 8-inch SCT with excellent versatility."
     },
     {
@@ -24,37 +24,76 @@ export const equipmentList = [
     {
         name: "EQ6-R Pro",
         type: "mount",
-        image: "images/mounts/eq6r.jpg",
+        image: "images/eq6.jpg",
         description: "Heavy-duty tracking mount for astrophotography."
     },
     {
-        name: "EQ6-R Pro",
+        name: "NexStar Evolution with 6in SCT",
         type: "mount",
-        image: "images/mounts/eq6r.jpg",
-        description: "Heavy-duty tracking mount for astrophotography."
+        image: "images/Evo6.jpg",
+        description: "Computerized GoTo mount perfect for visual observing"
+    }, 
+    {
+        name: "Advanced VX Mount",
+        type: "mount",
+        image: "images/AVmount2.png",
+        description: "A compact and portable EQ mount."
     },
     {
-        name: "EQ6-R Pro",
-        type: "mount",
-        image: "images/mounts/eq6r.jpg",
-        description: "Heavy-duty tracking mount for astrophotography."
+        name: "SeeStar S50",
+        type: "telescope",
+        image: "images/S50.jpg",
+        description: "All in one telescope controlled with my phone. Shown here with solar filter installed"
     },
     {
-        name: "EQ6-R Pro",
-        type: "mount",
-        image: "images/mounts/eq6r.jpg",
-        description: "Heavy-duty tracking mount for astrophotography."
+        name: "ASI 120mm Mini",
+        type: "camera",
+        image: "images/cam120mini.jpg",
+        description: "Perfect camera for the guide scope."
     },
     {
         name: "ASI 174MM",
         type: "camera",
-        image: "images/cameras/174mm.jpg",
+        image: "images/cam174mm.jpg",
         description: "Excellent for solar and lunar imaging."
     },
     {
         name: "ASI 224MC",
         type: "camera",
-        image: "images/cameras/224mc.jpg",
+        image: "images/cam224mc.jpg",
         description: "A sensitive color planetary camera."
-    }
+    }, 
+    {
+        name: "ASIAIR Plus 256gb",
+        type: "accessory",
+        image: "images/airplus.png",
+        description: "Wirelessly control your entire telescope rig with your phone or tablet"
+    },
+    {
+        name: "Omni XLT 150",
+        type: "telescope",
+        image: "images/Omni1.jpg",
+        description: "My first Alaskan bought scope."
+    }, 
+     {
+        name: "Extra Slot will fill later?",
+        type: "accessory",
+        image: "images/placeholder.jpg",
+        description: "Cute bear butt."
+    }, 
+    {
+        name: "Because I'm always buying more equipment...",
+        type: "accessory",
+        image: "images/porky.jpg",
+        description: "Other hazards of Alaska..."
+    },
+    {
+        name: "There is ALWAYS more equipment...",
+        type: "accessory",
+        image: "images/mooses.jpg",
+        description: "Little guys."
+    },
+
+
+
 ];

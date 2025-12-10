@@ -12,7 +12,13 @@
 
 <body>
 <header>
-    <h1>Quiet Skies</h1>
+    <div class="site-logo">
+        <span class="moon">🌙</span>
+    </div>
+
+    <h1 class="title">Quiet Skies</h1>
+    <p class="subtitle">Observing the Universe from the Suburban-Bush</p>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -48,5 +54,20 @@
 <footer>
     <p>© 2025 Quiet Skies</p>
 </footer>
+<!-- Modal Popup -->
+<div id="equipment-modal" class="modal hidden">
+    <div class="modal-content">
+        <span id="modal-close" class="close">&times;</span>
+
+        <img id="modal-image" src="" alt="">
+        <h2 id="modal-name"></h2>
+        <p id="modal-type"></p>
+        <p id="modal-description"></p>
+        <div id="modal-specs"></div>
+
+    </div>
+</div>
+
+
 </body>
 </html>

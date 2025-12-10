@@ -10,9 +10,12 @@
     <script type="module" src="js/home.js" defer></script>
 </head>
 
-<body>
 <header>
-    <h1>Quiet Skies</h1>
+    <div class="site-logo">
+        <span class="moon">🌙</span>
+    </div>
+
+    <h1 class="title">Quiet Skies</h1>
     <p class="subtitle">Observing the Universe from the Suburban-Bush</p>
 
     <nav>
@@ -26,13 +29,12 @@
     </nav>
 </header>
 
+
+
 <main>
 
     <!-- Hero image area -->
-    <section class="hero">
-        <img src="images/hero.jpg" alt="Night sky over Alaska">
-        <h2 class="overlay-text">Welcome to Quiet Skies</h2>
-    </section>
+    
 
     <!-- Intro text -->
     <section>
@@ -42,6 +44,7 @@
             a place where the night is dark, the wildlife is close, and the
             sky feels like an old friend. This site blends observations,
             stories, solar activity, and the unique calm of the suburban-bush.
+            Just hover your mouse over the image to get a discription.
         </p>
     </section>
 
@@ -52,13 +55,34 @@
     </section>
 
     <!-- Image + Text row -->
+   
     <section class="image-row">
-        <img src="images/moon2.jpg" alt="Moon over Alaska">
-        <div>
+    <img src="images/moon2.jpg" 
+         alt="Moon over Alaska"
+         title="The Moon — photographed from Chugiak, Alaska">
+
+    <img src="images/au06.jpg" 
+         alt="Aurora over Alaska"
+         title="Aurora Borealis — taken during a strong geomagnetic storm">
+
+    <img src="images/solar5.jpg" 
+         alt="Solar prominence"
+         title="Solar detail — captured with the Lunt 60mm H-alpha telescope">
+
+    <img src="images/jupiter.jpg" 
+         alt="Jupiter"
+         title="Jupiter — image of the gas giant with visible cloud bands">
+
+    <div>
+
             <p>
                 Observing the night sky here means sharing space with the
                 mountains, the cold, and sometimes a curious moose.
             </p>
+         <img src="images/moosescope3.png" alt="Moose inspecting a telescope in the woods"
+                title="A curious Alaska moose stops by to check out the telescope"
+                class="center-img">
+
         </div>
     </section>
 

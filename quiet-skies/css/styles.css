@@ -37,27 +37,65 @@ main {
     margin: 2rem auto;
 }
 
-
 /* ------------------------------
-   HEADER + NAV
+   HEADER + NAV (corrected block)
 ------------------------------- */
 header {
-    text-align: center;
-    padding: 2rem 1rem;
     background: #0f141b;
     border-bottom: 1px solid #1d2228;
+    padding: 2rem 1rem;
+
+    /* layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centered layout */
+    gap: 0.75rem;
+    position: relative;    /* needed for moon */
 }
 
-header h1 {
+/* Left-floating moon logo */
+.site-logo {
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+}
+
+.moon {
+    font-size: 2.2rem;
+}
+
+/* ------------------------------
+   LOGO STYLES
+------------------------------- */  
+.title {
     font-size: 2.4rem;
-    margin-bottom: 0.3rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 
-header .subtitle {
-    font-size: 1.1rem;
-    color: #8fbf6f; /* soft aurora green */
+.quiet {
+    color: #F6A46A;  /* soft orange */
 }
 
+.skies {
+    color: #CE6B6B;  /* warm red */
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    color: #8fbf6f; /* aurora green */
+    text-align: center;     /* centers the subtitle */
+    margin-top: -0.3rem;    /* pulls it slightly closer to the title */
+    margin-bottom: 0.8rem;  /* adds clean space above navigation */
+}
+
+
+/* ------------------------------
+   NAVIGATION
+------------------------------- */
 nav ul {
     margin-top: 1rem;
     list-style: none;
@@ -103,7 +141,7 @@ h3 {
 ------------------------------- */
 .hero {
     position: relative;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .hero img {
@@ -149,6 +187,39 @@ p {
     width: 200px;
     border-radius: 0.4rem;
 }
+
+/* Solar page image control */
+.solar-img {
+    max-width: 300px;   /* Or 250px, 200px — your choice */
+    width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+    display: block;
+    margin: 1rem auto; /* centers the image */
+}
+/* Solar images side-by-side */
+.solar-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap; /* allows stacking on narrow screens */
+}
+
+.solar-row .solar-img {
+    max-width: 300px;
+    flex: 1 1 auto; 
+}
+
+.solar-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+    display: block;
+    object-fit: cover;   /* NEW */
+}
+
 
 
 /* ------------------------------
@@ -227,6 +298,53 @@ button:hover {
     border-radius: 0.4rem;
     margin-bottom: 0.5rem;
 }
+/* ------------------------------
+   EQUIPMENT MODAL
+------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #1d2228;
+    border: 1px solid #3dd5e5;
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.close {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #3dd5e5;
+}
+
+.close:hover {
+    color: #8fbf6f;
+}
 
 
 /* ------------------------------
@@ -269,6 +387,11 @@ footer .social a:hover {
     color: #8fbf6f;
 }
 
+.center-img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 90%;
+}
 
 
 /* ------------------------------
